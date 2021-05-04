@@ -23,29 +23,39 @@ function renderInput(lista, el) {
         </div>
         `
         );
-
     }
 }
 var el = document.querySelector('.ingredients');
 renderInput(lista, el);
 
-//incrementa il prezzo quando un elemento viene aggiunto
-var checks = document.querySelectorAll("input[type='checkbox']");
-console.log(checks.checked);
-for (var i = 0; i < checks.length; i++) {
-    var element = checks[i]; 
-    if (element.checked) {
-        console.log(cheks[i]);
-    }
-}
-/* var sum = null;
-var prezzoPane = 2;
-var prezzoBurger = sum; */
-
-
-//creo array di codici sconto
-//se inserito un codice sconto corretto lo applico
-//solo al click su generate aggiungo un addEventListener
+//calcola prezzo panino al click
 document.querySelector('button').addEventListener('click', function() {
-    
+    //incrementa il prezzo quando un elemento viene aggiunto
+    var prezzoPane = 2;
+    var checks = document.querySelectorAll("input[type='checkbox']");
+    var sumEl = null;
+    for (var i = 0; i < checks.length; i++) {
+        if (checks[i].checked) {
+            sumEl += Number(checks[i].getAttribute('data-price'));
+        }
+    }   
+
+    var priceBurger = prezzoPane + sumEl;
+    var sconto = 0.5;
+    var finalPrice;
+
+    //creo array di codici sconto
+    var listaCodiciSconto = ['123456', '234567', '345678', '456789', '567890'];
+    var codiceScontoUtente = document.querySelector('#codice_sconto').value;
+    console.log(codiceScontoUtente);
+    for (var i = 0; i < listaCodiciSconto.length; i++) {
+        //se inserito un codice sconto corretto lo applico
+        if (codiceScontoUtente === Number(listaCodiciSconto[i])) {
+            finalPrice = priceBurger * sconto;
+        }   else {
+            finalPrice = priceBurger;
+        }
+    }
+    document.querySelector('#prezzo_burger').innerHTML = finalPrice;
+    console.log(finalPrice);
 })
