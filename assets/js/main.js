@@ -45,17 +45,26 @@ document.querySelector('button').addEventListener('click', function() {
     var finalPrice;
 
     //creo array di codici sconto
-    var listaCodiciSconto = ['123456', '234567', '345678', '456789', '567890'];
+    var listaCodiciSconto = [123456, 234567, 345678, 456789, 567890];
+    console.log(listaCodiciSconto);
     var codiceScontoUtente = document.querySelector('#codice_sconto').value;
     console.log(codiceScontoUtente);
-    for (var i = 0; i < listaCodiciSconto.length; i++) {
-        //se inserito un codice sconto corretto lo applico
-        if (codiceScontoUtente === Number(listaCodiciSconto[i])) {
-            finalPrice = priceBurger * sconto;
-        }   else {
-            finalPrice = priceBurger;
-        }
+    if (isSconto(codiceScontoUtente, listaCodiciSconto)) {
+        finalPrice = priceBurger * sconto;
+    }   else {
+        finalPrice = priceBurger;
     }
+    
     document.querySelector('#prezzo_burger').innerHTML = finalPrice;
     console.log(finalPrice);
 })
+
+//funzione che mi cerca lo sconto
+function isSconto(numero, listaNumeri) {
+    for (var i = 0; i < listaNumeri.length; i++) {
+        //se inserito un codice sconto corretto lo applico
+        if (numero == listaNumeri[i]) {
+            return true;
+        }   return false;
+    }   
+}
