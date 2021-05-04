@@ -30,10 +30,22 @@ var el = document.querySelector('.ingredients');
 renderInput(lista, el);
 
 //incrementa il prezzo quando un elemento viene aggiunto
-var sum;
+var checks = document.querySelectorAll("input[type='checkbox']");
+console.log(checks.checked);
+for (var i = 0; i < checks.length; i++) {
+    var element = checks[i]; 
+    if (element.checked) {
+        console.log(cheks[i]);
+    }
+}
+/* var sum = null;
 var prezzoPane = 2;
-var prezzoBurger = sum;
+var prezzoBurger = sum; */
+
 
 //creo array di codici sconto
 //se inserito un codice sconto corretto lo applico
 //solo al click su generate aggiungo un addEventListener
+document.querySelector('button').addEventListener('click', function() {
+    
+})
