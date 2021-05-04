@@ -67,7 +67,7 @@ input[type='checkbox']{
     color: black;
 }
 input[type='checkbox']:checked:after {
-    content: '';
+    content: '\2713';
     font-size: larger;
     color: black;
     text-align: center;
