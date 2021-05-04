@@ -16,9 +16,9 @@ function renderInput(lista, el) {
     for (let i = 0; i < lista.length; i++) {
         el.insertAdjacentHTML('beforeend',
         `
-        <div class="form-group">
-        <img width="30" src="./assets/img/${lista[i][0] + '.svg'}">
-                <label for="${lista[i][0]}">${lista[i][0]}</label>
+        <div class="form-group d-flex align-center py-1">
+                <img width="40" src="./assets/img/${lista[i][0] + '.svg'}">
+                <label class="px-1" for="${lista[i][0]}">${lista[i][0]}</label>
                 <input type="checkbox" name="${lista[i][0]}" id="${lista[i][0]}" data-price="${lista[i][1]}">
         </div>
         `
@@ -46,17 +46,17 @@ document.querySelector('button').addEventListener('click', function() {
 
     //creo array di codici sconto
     var listaCodiciSconto = [123456, 234567, 345678, 456789, 567890];
-    console.log(listaCodiciSconto);
+    //console.log(listaCodiciSconto);
     var codiceScontoUtente = document.querySelector('#codice_sconto').value;
-    console.log(codiceScontoUtente);
+    //console.log(codiceScontoUtente);
     if (isSconto(codiceScontoUtente, listaCodiciSconto)) {
         finalPrice = priceBurger * sconto;
     }   else {
         finalPrice = priceBurger;
     }
     
-    document.querySelector('#prezzo_burger').innerHTML = finalPrice;
-    console.log(finalPrice);
+    document.querySelector('#prezzo_burger').innerHTML = finalPrice + '€';
+    //console.log(finalPrice);
 })
 
 //funzione che mi cerca lo sconto
@@ -65,6 +65,6 @@ function isSconto(numero, listaNumeri) {
         //se inserito un codice sconto corretto lo applico
         if (numero == listaNumeri[i]) {
             return true;
-        }   return false;
+        }
     }   
 }

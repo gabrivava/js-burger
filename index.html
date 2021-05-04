@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <title>js-burger</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -12,24 +14,31 @@
 
         <!--  header -->
         <header>
-            <h1>Create your burger</h1>
+            <h1>Create Your Burger</h1>
+            <img class="burger" src="./assets/img/burger-top.png" alt="">
         </header>
 
         <!-- main -->
         <main>
             <!-- name burger -->
-            <input type="text" placeholder="Name Your Burger">
+            <input id="nome-burger" type="text" placeholder="Name Your Burger">
             <!-- ingrediets -->
-            <h2>Ingredients</h2>
-            <section class='ingredients'>
+            <h3 class="py-1">Ingredients</h3>
+            <section class='ingredients d-flex flex-wrap'>
                 
             </section>
-            <input type="number" id="codice_sconto">
-            <button>Calculate</button>
+            <div class="row">
+                <span>Discount Coupon</span>
+                <input type="number" id="codice_sconto" placeholder="345678">
+            </div>
+            <div class="d-flex py-1 just-center">
+                <button>Calculate</button>
+            </div>
+            
         </main>
         
         <!-- footer -->
-        <footer>
+        <footer class="d-flex just-space-between">
             <h3>Your Price</h3>
             <h3 id="prezzo_burger"></h3>
         </footer>

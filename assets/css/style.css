@@ -1,0 +1,95 @@
+/* utility */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #FFF5E2;
+    font-family: 'Roboto', sans-serif;
+}
+header {
+    background-color: #FDBB40;
+    padding: 2rem;
+    position: relative;
+}
+main {
+    padding: 2rem;
+    background-color: white;
+}
+.card {
+    width: 50%;
+    margin: 0 auto;
+}
+.burger {
+    position: absolute;
+    top: -20px;
+    right: -50px;
+    height: 180px;
+}
+#nome-burger {
+    border: none;
+    font-size: large;
+}
+.py-1 {
+    padding: 1rem 0;
+}
+.px-1 {
+    padding: 0 1rem;
+}
+.d-flex {
+    display: flex;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.align-center {
+    align-items: center;
+}
+.just-center {
+    justify-content: center;
+}
+.just-space-between {
+    justify-content: space-between;
+}
+.form-group {
+    width: 45%;
+}
+input[type='checkbox']{
+    width: 14px !important;
+    height: 14px !important;
+    margin: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    background: #D33359;
+    color: black;
+}
+input[type='checkbox']:checked:after {
+    content: '';
+    font-size: larger;
+    color: black;
+    text-align: center;
+}
+.row {
+    width: 100%;
+}
+#codice_sconto {
+    border: none;
+    background-color: #FFF5E2;
+    width: 60%;
+    padding: 0.2rem;
+}
+button {
+    background-color: #FDBB40;
+    border: none;
+    padding: 0.7rem 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+}
+footer {
+    background-color: #D33359;
+    color: white;
+    padding: 2rem;
+}
